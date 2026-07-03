@@ -1,16 +1,16 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import AppLayout from "./layouts/app-layout";
-import ProtectedRoute from "./components/protected-route";
-import { ThemeProvider } from "./components/theme-provider";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 import LandingPage from "./pages/LandingPage";
-import Onboarding from "./pages/onboarding";
-import PostJob from "./pages/post-job";
-import JobListing from "./pages/jobListing";
-import MyJobs from "./pages/my-jobs";
-import SavedJobs from "./pages/saved-jobs";
-import JobPage from "./pages/job";
+import Onboarding from "./pages/Onboarding";
+import PostJob from "./pages/PostJob";
+import JobListing from "./pages/JobListing";
+import MyJobs from "./pages/MyJobs";
+import SavedJobs from "./pages/SavedJobs";
+import JobPage from "./pages/JobPage";
 
 import "./App.css";
 
@@ -24,51 +24,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/onboarding",
-        element: (
-          <ProtectedRoute>
-            <Onboarding />
-          </ProtectedRoute>
-        ),
+        element: <Onboarding />,
       },
       {
         path: "/jobs",
-        element: (
-          <ProtectedRoute>
-            <JobListing />
-          </ProtectedRoute>
-        ),
+        element: <JobListing />,
       },
       {
         path: "/post-job",
-        element: (
-          <ProtectedRoute>
-            <PostJob />
-          </ProtectedRoute>
-        ),
+        element: <PostJob />,
       },
       {
         path: "/my-jobs",
-        element: (
-          <ProtectedRoute>
-            <MyJobs />
-          </ProtectedRoute>
-        ),
+        element: <MyJobs />,
       },
       {
         path: "/saved-jobs",
-        element: (
-          <ProtectedRoute>
-            <SavedJobs />
-          </ProtectedRoute>
-        ),
+        element: <SavedJobs />,
       },
       {
         path: "/job/:id",
-        element: (
-          <ProtectedRoute>
-            <JobPage />
-          </ProtectedRoute>
-        ),
+        element: <JobPage />,
       },
     ],
   },
