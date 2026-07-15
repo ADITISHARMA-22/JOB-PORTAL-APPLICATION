@@ -1,5 +1,5 @@
 import { getMyJobs } from "@/api/apiJobs";
-import useFetch from "@/hooks/usefetch";
+import useFetch from "@/hooks/useFetch";
 import { useUser } from "@clerk/react";
 import { BarLoader } from "react-spinners";
 import JobCard from "./JobCard";

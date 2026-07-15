@@ -418,7 +418,7 @@ import {
 } from "./ui/card";
 
 import { deleteJob, saveJob } from "@/api/apiJobs";
-import useFetch from "@/hooks/usefetch";
+import useFetch from "@/hooks/useFetch";
 import { useUser } from "@clerk/react";
 
 const JobCard = ({

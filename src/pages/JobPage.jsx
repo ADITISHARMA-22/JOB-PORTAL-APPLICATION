@@ -150,7 +150,7 @@ import {
 import { ApplyJobDrawer } from "@/components/applyJob";
 import ApplicationCard from "@/components/ApplicationCard";
 
-import useFetch from "@/hooks/usefetch";
+import useFetch from "@/hooks/useFetch";
 import { getSingleJob, updateHiringStatus } from "@/api/apiJobs";
 
 const JobPage = () => {

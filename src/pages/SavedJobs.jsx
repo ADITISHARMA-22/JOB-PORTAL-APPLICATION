@@ -1,6 +1,6 @@
 import { getSavedJobs } from "@/api/apiJobs";
 import JobCard from "@/components/JobCard";
-import useFetch from "@/hooks/usefetch";
+import useFetch from "@/hooks/useFetch";
 import { useUser } from "@clerk/react";
 import { useEffect } from "react";
 import { BarLoader } from "react-spinners";

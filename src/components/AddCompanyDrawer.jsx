@@ -136,7 +136,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
-import useFetch from "@/hooks/usefetch";
+import useFetch from "@/hooks/useFetch";
 import { addNewCompany } from "@/api/apiCompanies";
 
 import { BarLoader } from "react-spinners";

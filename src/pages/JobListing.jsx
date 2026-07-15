@@ -170,7 +170,7 @@ import { useUser } from "@clerk/react";
 import { BarLoader } from "react-spinners";
 import { Search, RotateCcw, MapPin, Building2 } from "lucide-react";
 
-import useFetch from "@/hooks/usefetch";
+import useFetch from "@/hooks/useFetch";
 
 import JobCard from "@/components/JobCard";
 import { Button } from "@/components/ui/button";

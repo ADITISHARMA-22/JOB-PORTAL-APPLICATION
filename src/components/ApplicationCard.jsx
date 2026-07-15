@@ -118,7 +118,7 @@ import {
 } from "./ui/select";
 
 import { updateApplicationStatus } from "@/api/apiApplication";
-import useFetch from "@/hooks/usefetch";
+import useFetch from "@/hooks/useFetch";
 import { BarLoader } from "react-spinners";
 import { useState } from "react";
 

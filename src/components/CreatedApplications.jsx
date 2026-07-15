@@ -47,7 +47,7 @@ import { useUser } from "@clerk/react";
 import { BarLoader } from "react-spinners";
 import { BriefcaseBusiness } from "lucide-react";
 
-import useFetch from "@/hooks/usefetch";
+import useFetch from "@/hooks/useFetch";
 import { getApplications } from "@/api/apiApplication";
 
 import ApplicationCard from "./ApplicationCard";

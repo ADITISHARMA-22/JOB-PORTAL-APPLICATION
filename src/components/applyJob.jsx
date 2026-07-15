@@ -5,7 +5,7 @@ import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
-import useFetch from "@/hooks/usefetch";
+import useFetch from "@/hooks/useFetch";
 import { applyToJob } from "@/api/apiApplication";
 
 import { Button } from "@/components/ui/button";
