@@ -248,10 +248,26 @@ export async function getSingleJob(token, { job_id }) {
 // ===============================
 // Save / Unsave Job
 // ===============================
-export async function saveJob(token, { alreadySaved }, saveData) {
+// ===============================
+// Save / Unsave Job
+// ===============================
+export async function saveJob(token, _, saveData) {
   const supabase = await supabaseClient(token);
 
-  if (alreadySaved) {
+  const { data: existingSavedJob, error: checkError } = await supabase
+    .from("saved_jobs")
+    .select("id")
+    .eq("job_id", saveData.job_id)
+    .eq("user_id", saveData.user_id)
+    .limit(1)
+    .maybeSingle();
+
+  if (checkError) {
+    console.error("Error checking saved job:", checkError);
+    throw new Error("Unable to update saved job.");
+  }
+
+  if (existingSavedJob) {
     const { data, error } = await supabase
       .from("saved_jobs")
       .delete()
@@ -261,22 +277,13 @@ export async function saveJob(token, { alreadySaved }, saveData) {
 
     if (error) {
       console.error("Error removing saved job:", error);
-      return null;
+      throw new Error("Unable to remove saved job.");
     }
 
-    return data;
-  }
-
-  // Prevent duplicate saves
-  const { data: existing } = await supabase
-    .from("saved_jobs")
-    .select("id")
-    .eq("job_id", saveData.job_id)
-    .eq("user_id", saveData.user_id)
-    .maybeSingle();
-
-  if (existing) {
-    return [existing];
+    return {
+      saved: false,
+      data,
+    };
   }
 
   const { data, error } = await supabase
@@ -286,10 +293,13 @@ export async function saveJob(token, { alreadySaved }, saveData) {
 
   if (error) {
     console.error("Error saving job:", error);
-    return null;
+    throw new Error("Unable to save job.");
   }
 
-  return data;
+  return {
+    saved: true,
+    data,
+  };
 }
 
 // ===============================
